@@ -38,7 +38,9 @@
   {% include 'social-meta-tags' %}
 
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
-  {{'main.scss}}
+<!--   custom styles -->
+  {{'main.scss.css' | asset_url | stylesheet_tag }}
+<!--    -->
 
   <script>
     var theme = {
@@ -127,4 +129,7 @@
     <li id="a11y-refresh-page-message">{{ 'general.accessibility.refresh_page' | t }}</li>
   </ul>
 </body>
+<!-- agrega custom scripts -->
+<script src="{{'main.js' | asset_url | script_tag }}"></script>
+<!--  -->
 </html>
