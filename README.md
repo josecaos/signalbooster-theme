@@ -1,2 +1,2 @@
 # signalbooster-theme
-Shopify theme for signalbooster.co.za
+Shopify theme files for signalbooster.co.za
