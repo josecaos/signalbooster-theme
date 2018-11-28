@@ -39,6 +39,9 @@
 
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
 <!--   custom styles -->
+  {{'bootstrap.min.css' | asset_url | stylesheet_tag}}
+  {{'slick.css' | asset_url |  stylesheet_tag}}
+  {{'slick-theme.css' | asset_url |  stylesheet_tag}}
   {{'main.scss.css' | asset_url | stylesheet_tag }}
 <!--    -->
 
@@ -130,6 +133,13 @@
   </ul>
 </body>
 <!-- agrega custom scripts -->
-<script src="{{'main.js' | asset_url | script_tag }}"></script>
+<!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'bootstrap.min.js' | asset_url }}" defer></script><!--<![endif]-->
+<!--[if lte IE 9]><script src="{{ 'bootstrap.min.js' | asset_url }}"></script><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'imgLiquid-min.js' | asset_url }}" defer></script><!--<![endif]-->
+<!--[if lte IE 9]><script src="{{ 'imgLiquid-min.js' | asset_url }}"></script><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'slick.min.js' | asset_url }}" defer></script><!--<![endif]-->
+<!--[if lte IE 9]><script src="{{ 'slick.min.js' | asset_url }}"></script><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'main.js' | asset_url }}" defer></script><!--<![endif]-->
+<!--[if lte IE 9]><script src="{{ 'main.js' | asset_url }}"></script><![endif]-->
 <!--  -->
 </html>
