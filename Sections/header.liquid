@@ -55,8 +55,52 @@
 
     {% endif %}
   {% endif %}
+<!--    -->
+  <div id="top-header" class="container-fluid">
+
+    <div class="col">
+
+    <div class="row">
+
+      <div id="info" class="col col-md-8 text-left ha self-align-center">
+
+        <div class="row">
+
+          <div class="col-auto ha my-auto">
+            <a href="mailto:">
+              <i class="fa fa-phone-square"></i>&nbsp;+455-55-555-555
+            </a>
+          </div>
+          <div class="col-auto ha my-auto">
+            <a href="mailto:">
+              <i class="fa fa-envelope"></i>&nbsp;contact@signalbooster.co.nz
+            </a>
+        </div>
+      </div>
+  </div>
+
+      <div id="search" class="col col-md-4">
+
+        <div class="row float-right">
+          <div class="col-auto ha my-auto">Search:&nbsp:</div>
+          <button type="button" class="col-auto ha my-auto text-right btn--link site-header__icon site-header__search-toggle js-drawer-open-top">
+            <i class="fa fa-search"></i>
+            <span class="icon__fallback-text">{{ 'layout.navigation.search' | t }}</span>
+          </button>
+
+          </div>
+        </div>
+     </div>
+   </div>
+ </div>
+
 
   <header class="site-header{% if section.settings.align_logo == 'left' %} border-bottom logo--left{% else %} logo--center{% endif %}" role="banner">
+
+     <div class="site-header__search site-header__icon">
+            {% include 'search-form' %}
+          </div>
+
     <div class="grid grid--no-gutters grid--table site-header__mobile-nav">
       {% if section.settings.align_logo == 'center' %}
         {%- assign logo_classes = 'medium-up--one-third medium-up--push-one-third logo-align--center' -%}
@@ -112,14 +156,7 @@
 
       <div class="grid__item {% if section.settings.align_logo == 'left' %}medium-up--one-quarter{% else %}medium-up--one-third medium-up--push-one-third{% endif %} text-right site-header__icons{% if shop.customer_accounts_enabled %} site-header__icons--plus{% endif %}">
         <div class="site-header__icons-wrapper">
-          <div class="site-header__search site-header__icon">
-            {% include 'search-form' %}
-          </div>
 
-          <button type="button" class="btn--link site-header__icon site-header__search-toggle js-drawer-open-top">
-            {% include 'icon-search' %}
-            <span class="icon__fallback-text">{{ 'layout.navigation.search' | t }}</span>
-          </button>
 
           {% if shop.customer_accounts_enabled %}
             {% if customer %}

@@ -1,0 +1,96 @@
+@import "https://fonts.googleapis.com/css?family=Nunito|Open+Sans";
+/* vars */
+$color-1: #379FE8;
+$color-2: #4CE2A7;
+$color-error: #E24C4C;
+$color-alert: #F1A153;
+$color-clear: #FFF;
+$color-dark: #022047;
+$grey-1: #CCCCCC;
+$grey-2: #333333;
+$grey-3: #666666;
+$grey-4: #999999;
+$top-header-height: 35px;
+$header-height: 65px;
+$font-headings: 'Nunito', sans-serif;
+$font-content: 'Open Sans', sans-serif;
+$shadow-height-1: 2px;
+$shadow-height-2: 7px;
+$shadow-height-3: 13px;
+
+/* wireframe */
+* {outline: 1px solid black;}
+
+/* general */
+body {
+  background: $color-1;
+  font-family: $font-content;
+  h1,h2,h3,h4,h5,h6 {
+    font-family: $font-headings;
+  }
+
+  div, section, article {
+    height: 100%;
+  }
+
+  p {
+    font-family: $font-content;
+  }
+
+  a {
+    display:block;
+    text-decoration: none;
+    font-family: $font-content;
+    color: $color-1;
+
+    &:hover {
+      color: $color-2;
+      text-decoration: none;
+    }
+  }
+}
+
+.ha {
+  height: auto;
+}
+/* mixins */
+@mixin sombra($ancho,$alto,$blur,$spread,$color) {
+
+  box-shadow: $ancho $alto $blur $spread $color;
+}
+/*  */
+
+/* header */
+#top-header {
+  background-color: $color-2;
+  color: $color-clear;
+  font-size:0.85em;
+  height: auto;
+  #info {
+    height: $top-header-height;
+    a {
+      color: $color-clear;
+      &:hover {
+        color: $color-dark;
+      }
+    }
+  }
+  #search {
+    height: $top-header-height;
+    button.site-header__search-toggle {
+      i {
+        font-size: 1.7em;
+        color: $color-clear;
+        &:hover {
+          color: $color-dark;
+        }
+      }	
+
+    }
+  }
+}
+
+header.site-header {
+  height: $header-height;
+  @include sombra($shadow-height-3,$shadow-height-3,3,3,$grey-2);
+}
