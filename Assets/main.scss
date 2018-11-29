@@ -11,7 +11,7 @@ $grey-2: #333333;
 $grey-3: #666666;
 $grey-4: #999999;
 $top-header-height: 35px;
-$header-height: 65px;
+$header-height: 80px;
 $font-headings: 'Nunito', sans-serif;
 $font-content: 'Open Sans', sans-serif;
 $shadow-height-1: 2px;
@@ -54,17 +54,18 @@ body {
   height: auto;
 }
 /* mixins */
-@mixin sombra($ancho,$alto,$blur,$spread,$color) {
+@mixin sombra($ancho,$alto,$color) {
 
-  box-shadow: $ancho $alto $blur $spread $color;
+  box-shadow: $ancho $alto 3 $color;
+
 }
 /*  */
 
 /* header */
 #top-header {
-  background-color: $color-2;
+  background-color: $color-1;
   color: $color-clear;
-  font-size:0.85em;
+  font-size:0.9em;
   height: auto;
   #info {
     height: $top-header-height;
@@ -84,7 +85,7 @@ body {
         &:hover {
           color: $color-dark;
         }
-      }	
+      }
 
     }
   }
@@ -92,5 +93,18 @@ body {
 
 header.site-header {
   height: $header-height;
-  @include sombra($shadow-height-3,$shadow-height-3,3,3,$grey-2);
+  top: 0;
+  left: 0;
+  @include sombra($shadow-height-1,$shadow-height-1,$grey-2);
+  z-index: 10000;
+}
+
+/* overrides */
+.site-header__mobile-nav {
+    position: static !important;
+    background-color: #fff;
+}
+.site-header__logo {
+  margin: 0 0;
+  padding: 8;
 }

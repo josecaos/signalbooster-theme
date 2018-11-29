@@ -1,8 +1,14 @@
 $(document).ready(() => {
 
-  console.log('SIGNALBOOSTER DEV\n' + ' ///////////////////////')
+  console.log('SIGNALBOOSTER DEV\n' + '///////////////////////')
 //
+// header
+  header()//default
 
+  $(window).on('scroll',()=>{
+    header()
+	})
+//
   img_liquid()
 
 
@@ -25,5 +31,26 @@ function img_liquid() {
           fill: false,
       horizontalAlign: "right"
     })
+
+}
+
+function header() {
+
+    	var top = $(window).scrollTop()
+        var header = $('header')
+    	var maincontent = $('#PageContainer')
+
+        if(top >= 50) {
+
+         header.css('position','fixed')
+         maincontent.css('padding-top','80px')
+
+
+        } else {
+
+          header.css('position','relative')
+          maincontent.css('padding-top','0px')
+
+        }
 
 }
