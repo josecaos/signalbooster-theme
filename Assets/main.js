@@ -39,18 +39,19 @@ function header() {
     	var top = $(window).scrollTop()
         var header = $('header')
     	var maincontent = $('#PageContainer')
+        var search = $('#fixed-search-button')
 
         if(top >= 50) {
 
-         header.css('position','fixed')
          maincontent.css('padding-top','80px')
-
+         header.css('position','fixed')
+         search.removeClass('hidden')
 
         } else {
 
-          header.css('position','relative')
           maincontent.css('padding-top','0px')
-
+          header.css('position','relative')
+          search.addClass('hidden')
         }
 
 }
