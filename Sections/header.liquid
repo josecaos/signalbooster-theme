@@ -67,13 +67,13 @@
         <div class="row">
 
           <div class="col-auto ha my-auto">
-            <a href="mailto:">
-              <i class="fa fa-phone-square"></i>&nbsp;+455-55-555-555
+            <a href="tel:{{section.settings.company_tel}}">
+              <i class="fa fa-phone-square"></i>&nbsp;{{section.settings.company_tel}}
             </a>
           </div>
           	<div class="col-auto ha my-auto">
-            	<a href="mailto:">
-              	<i class="fa fa-envelope"></i>&nbsp;contact@signalbooster.co.nz
+            	<a href="mailto:{{section.settings.company_email}}">
+              	<i class="fa fa-envelope"></i>&nbsp;{{section.settings.company_email}}
             	</a>
         	</div>
         </div>
@@ -430,6 +430,51 @@
           }
         }
       ]
+    },
+
+{
+      "type": "text",
+      "id": "company_tel",
+      "label": {
+        "de": "Tel",
+        "en": "Telephone",
+        "es": "Teléfono",
+        "fr": "Tel",
+        "it": "Tel",
+        "ja": "電話",
+        "pt-BR": "Teléfono"
+      },
+      "default": {
+        "de": "55555555",
+        "en": "55555555",
+        "es": "55555555",
+        "fr": "55555555",
+        "it": "55555555",
+        "ja": "55555555",
+        "pt-BR": "55555555"
+      }
+    },
+{
+      "type": "text",
+      "id": "company_email",
+      "label": {
+        "de": "Email",
+        "en": "Email",
+        "es": "Email",
+        "fr": "Email",
+        "it": "Email",
+        "ja": "Eメール",
+        "pt-BR": "Email"
+      },
+      "default": {
+        "de": "company@company.com",
+        "en": "company@company.com",
+        "es": "company@company.com",
+        "fr": "company@company.com",
+        "it": "company@company.com",
+        "ja": "company@company.com",
+        "pt-BR": "company@company.com"
+      }
     },
     {
       "type": "image_picker",
