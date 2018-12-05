@@ -1,15 +1,20 @@
 @import "https://fonts.googleapis.com/css?family=Nunito|Open+Sans";
 /* vars */
 $color-1: #379FE8;
-$color-2: #4CE2A7;
+/* $color-2: #4CE2A7; */
+$color-2: #448C00;
 $color-error: #E24C4C;
 $color-alert: #F1A153;
 $color-clear: #FFF;
 $color-dark: #022047;
-$grey-1: #CCCCCC;
-$grey-2: #333333;
-$grey-3: #666666;
-$grey-4: #999999;
+$grey-1: #F7F7F7;
+$grey-2: #E8E8E8;
+$grey-3: #DCDCDC;
+$grey-4: #C4C4C4;
+$grey-5: #AAAAAA ;
+$grey-6: #8C8C8C;
+$grey-7: #666666;
+$grey-8: #474747;
 $color-white: #FFF;
 $color-black: #000;
 $top-header-height: 35px;
@@ -19,9 +24,19 @@ $font-content: 'Open Sans', sans-serif;
 $shadow-height-1: 2px;
 $shadow-height-2: 5px;
 $shadow-height-3: 8px;
+$border-radius: 5px;
+$quote-font: 1.6em;
 
 /* wireframe */
 /* * {outline: 1px solid black;} */
+
+/* mixins */
+@mixin shadow($hor,$height,$blur,$color) {
+
+  box-shadow: $hor $height $blur $color;
+
+}
+/*  */
 
 /* general */
 body {
@@ -44,12 +59,19 @@ body {
     text-decoration: none;
     font-family: $font-content;
     color: $color-1;
-
     &:hover {
-      color: $color-alert;
+      color: $color-alert !important;
       text-decoration: none;
     }
   }
+}
+input, textarea, select {
+  border: 2px solid $color-2;
+  background-color: $grey-1;
+  color: $color-dark;
+  max-width: 100%;
+  line-height: 1.2;
+  border-radius: $border-radius;
 }
 .button-icon {
   &:hover, &:focus {
@@ -59,6 +81,20 @@ body {
     }
   }
 }
+.btn {
+  color: $color-white;
+  background-color: $color-2;
+  padding: 8px 32px;
+  border-radius: $border-radius;
+  font-size: 0.8em;
+  &:hover, &:focus, &:active {
+    background-color: $color-2 !important;
+  	opacity:0.8;
+  }
+}
+/* .index-section {
+  padding: 0;
+} */
 .hidden {
 	display: none;
 }
@@ -71,15 +107,17 @@ body {
   	color: $color-alert;
   }
 }
-/* mixins */
-@mixin shadow($hor,$height,$blur,$color) {
-
-  box-shadow: $hor $height $blur $color;
-
-}
-/*  */
 
 /* header */
+.site-header__logo {
+  padding: 0 !important;
+  .site-header__logo-image {
+    padding: 5px 0;
+    img {
+    width: auto;
+    }
+  }
+}
 #top-header {
   background-color: $color-1;
   color: $color-clear;
@@ -129,7 +167,7 @@ body {
   	color: $color-1;
   }
   icon-hamburger {
-  	color: $grey-1;
+  	color: $color-dark;
   }
   .icon-close {
   	color: $color-error;
@@ -138,7 +176,7 @@ body {
   	color: $color-2;
     font-size: 1.4em;
     &:hover, &:focus {
-    	color:$color-alert;
+      color:$color-alert;
     }
   }
 }
@@ -146,8 +184,9 @@ header.site-header {
   height: $header-height;
   top: 0;
   left: 0;
-  @include shadow($shadow-height-1,$shadow-height-1,5px,$grey-2);
+  @include shadow($shadow-height-1,$shadow-height-1,5px,$color-dark);
   z-index: 9999998;
+  transition: 0.2s;
 }
 #SearchDrawer {
   z-index: 9999999;
@@ -174,7 +213,29 @@ header.site-header {
   }
 
 }
+.announcement-bar {
+  background-color: $color-2 !important;
+}
+/* slider */
+.slideshow-wrapper {
+
+}
+.slideshow__arrows {
+  width: auto !important;
+  display: none;
+}
+.slideshow__pause {
+	display: none;
+}
+.slick-dots {
+    bottom: 5px;
+    display: block;
+    width: auto;
+}
 /*heroscreen */
+#shopify-section-hero {
+  padding-top: 0;
+}
 #heroscreen {
   min-height: 100vh;
   height: auto;
@@ -191,11 +252,11 @@ header.site-header {
         height:180px;
         width: 180px;
         display: inline-block;
-        background: $color-alert;
-        border-radius: 5px;
-        @include shadow($shadow-height-1, $shadow-height-1, 2px, $color-dark);
+        background: $color-2;
+        border-radius: $border-radius;
+        @include shadow($shadow-height-1, $shadow-height-1, 4px, $color-dark);
         &:hover {
-          @include shadow($shadow-height-2, $shadow-height-2, 3px, $color-dark);
+          @include shadow($shadow-height-2, $shadow-height-2, 6px, $color-dark);
         }
         a {
           height:100%;
@@ -224,10 +285,83 @@ header.site-header {
     content: "";
 
 }
+/* networks */
+.grid--view-items {
+  padding: 16px;
+}
+.logo-bar__item {
+  @include shadow($shadow-height-1,$shadow-height-1,7px,$color-dark);
+  border-radius: $border-radius;
+  padding: 8px;
+  &:hover {
+  	@include shadow($shadow-height-2,$shadow-height-2,12px,$color-dark);
+  }
+}
+/* products */
+#shopify-section-featured-collections {
+/*   background-color: $grey-1; */
+  background-color: $color-alert;
+  color: $color-dark;
+  .grid__item {
+    .product-card {
+      color: $color-dark;
+      background-color: $color-white;
+      border-radius: $border-radius;
+      padding: 8px;
+      @include shadow($shadow-height-1,$shadow-height-1,7px,$color-dark);
+      &:hover {
+        @include shadow($shadow-height-2,$shadow-height-2,12px,$color-dark);
+      }
+    }
+  }
+}
+/* about */
+#shopify-section-1543821116990 {
+  padding-bottom: 0;
+  color: $color-dark;
+}
+/* custom sections */
+#shopify-section-1543821887824,
+#shopify-section-1543824080741,
+#shopify-section-1543819517470 {
+  padding-top: 0;
+}
+#shopify-section-1543989407387.index-section {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+#Slideshow-1543988106747 {
+	margin-bottom: 0;
+}
+.index-section--slideshow {
+    padding-bottom: 0;
+
+}
+.quote {
+  background-color: $color-1;
+  color: $color-white;
+  font-size: $quote-font;
+  padding: 32px 32px;
+  text-align: center;
+}
+.custom__item-inner {
+  text-align: center;
+  a {
+    width: auto;
+  }
+}
+/* newsletter */
+.newsletter-section {
+  color: $color-dark;
+}
 /* overrides */
+#PageContainer {
+  -webkit-transition: width 1s; /* Safari */
+  transition: width 1s;
+}
 .site-header__mobile-nav {
-    position: static !important;
-    background-color: #fff;
+  position: static !important;
+  background-color: #fff;
 }
 .site-header__logo {
   margin: 0 0;
