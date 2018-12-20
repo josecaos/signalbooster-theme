@@ -1,0 +1,138 @@
+<div id="coverage" class="page-width">
+
+  <h2 class="text-center">{{section.settings.coverage_title}}</h2>
+
+
+
+    <ul class="row">
+
+      <li class="col-12 col-md-6 col-lg-4">
+        <a href="{{section.settings.coverage_1_link}}">
+          {{section.settings.coverage_1}}
+        </a>
+      </li>
+      <li class="col-12 col-md-6 col-lg-4">
+        <a href="{{section.settings.coverage_2_link}}">
+          {{section.settings.coverage_2}}
+        </a>
+      </li>
+      <li class="col-12 col-md-6 col-lg-4">
+        <a href="{{section.settings.coverage_3_link}}">
+          {{section.settings.coverage_3}}
+        </a>
+      </li>
+      <li class="col-12 col-md-6 col-lg-4">
+        <a href="{{section.settings.coverage_4_link}}">
+          {{section.settings.coverage_4}}
+        </a>
+      </li>
+      <li class="col-12 col-md-6 col-lg-4">
+        <a href="{{section.settings.coverage_5_link}}">
+          {{section.settings.coverage_5}}
+        </a>
+      </li>
+      <li class="col-12 col-md-6 col-lg-4">
+        <a href="{{section.settings.coverage_6_link}}">
+          {{section.settings.coverage_6}}
+        </a>
+      </li>
+
+    </ul>
+
+
+</div>
+
+
+{% schema %}
+  {
+    "name": {
+      "de": "Indexabdeckung",
+      "en": "Index Coverage",
+      "es": "Cobertura en Inicio",
+      "fr": "Couverture de l'indice",
+      "it": "Copertura dell'indice",
+      "ja": "インデックスカバレッジ",
+      "pt-BR": "Cobertura do índice"
+    },
+    "class": "index-section index-coverage index-section--flush",
+    "settings": [
+        {
+      "id": "coverage_title",
+      "type": "text",
+      "label": "Section Title"
+    },
+    {
+      "id": "coverage_1",
+      "type": "text",
+      "label": "Coverage 1 Title"
+    },
+    {
+      "id": "coverage_1_link",
+      "type": "text",
+      "label": "Coverage 1 Link"
+    },
+    {
+      "id": "coverage_2",
+      "type": "text",
+      "label": "Coverage 2 Title"
+    },
+    {
+      "id": "coverage_2_link",
+      "type": "text",
+      "label": "Coverage 2 Link"
+    },
+    {
+      "id": "coverage_3",
+      "type": "text",
+      "label": "Coverage 3 Title"
+    },
+    {
+      "id": "coverage_3_link",
+      "type": "text",
+      "label": "Coverage 3 Link"
+    },
+    {
+      "id": "coverage_4",
+      "type": "text",
+      "label": "Coverage 4 Title"
+    },
+    {
+      "id": "coverage_4_link",
+      "type": "text",
+      "label": "Coverage 4 Link"
+    },
+    {
+      "id": "coverage_5",
+      "type": "text",
+      "label": "Coverage 5 Title"
+    },
+    {
+      "id": "coverage_5_link",
+      "type": "text",
+      "label": "Coverage 5 Link"
+    },
+    {
+      "id": "coverage_6",
+      "type": "text",
+      "label": "Coverage 6 Title"
+    },
+    {
+      "id": "coverage_6_link",
+      "type": "text",
+      "label": "Coverage 6 Link"
+    }
+    ],
+    "presets": [
+    {
+    "name": "Index Coverage",
+    "category": "Custom"
+    }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

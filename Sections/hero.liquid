@@ -1,5 +1,5 @@
 <!-- Custom -->
-<div id="heroscreen" class="cointainer -fluid hero hero--{{ section.settings.hero_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %} box ratio-container lazyload js"
+<div id="heroscreen" class="container-fluid hero hero--{{ section.settings.hero_size }}{% if section.settings.title != blank or section.settings.text != blank or section.settings.button_label != blank %} hero__overlay{% endif %} box ratio-container lazyload js"
      {% if section.settings.image %}
      data-bgset="{% include 'bgset', image: section.settings.image %}"
      data-sizes="auto"
@@ -32,31 +32,53 @@
 
         <ul id="hero-buttons" class="col-12 ha my-auto text-center">
           <li class="row hero-button">
+            <div class="overlay col-12">
+            	<img src="{{ "heroscree.home.jpeg" | file_url  }}" alt="Home and Office Signal Booster"/>
+            </div>
+            <div class="overlay-color col-12"></div>
             <a href="#" class="col-12">
               <div class="row">
                 <div class="col-12 ha my-auto text-center">
                   <p>Home & Office</p>
-                  <i class="fa fa-home"></i>
                 </div>
               </div>
             </a>
           </li>
           <li class="row hero-button">
+            <div class="overlay col-12">
+            	<img src="{{ "heroscreen.buildings.jpeg" | file_url  }}" alt="Building Signal Booster"/>
+            </div>
+            <div class="overlay-color col-12"></div>
             <a href="#" class="col-12">
               <div class="row">
                 <div class="col-12 ha my-auto text-center">
                   <p>Buildings</p>
-                  <i class="fa fa-building"></i>
                 </div>
               </div>
             </a>
           </li>
           <li class="row hero-button">
+            <div class="overlay col-12">
+            	<img src="{{ "heroscreeon.portatil.jpg" | file_url  }}" alt="Boat and Portable Signal Booster"/>
+            </div>
+            <div class="overlay-color col-12"></div>
             <a href="#" class="col-12">
               <div class="row">
                 <div class="col-12 ha my-auto text-center">
                   <p>Portable Kits</p>
-                  <i class="fa fa-briefcase"></i>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="row hero-button">
+            <div class="overlay-vert col-12">
+            	<img src="{{ "heroscreeon.custom.jpg" | file_url  }}" alt="Custom Solutions Signal Booster"/>
+            </div>
+            <div class="overlay-color col-12"></div>
+            <a href="#" class="col-12">
+              <div class="row">
+                <div class="col-12 ha my-auto text-center">
+                  <p>Custom Solutions</p>
                 </div>
               </div>
             </a>
