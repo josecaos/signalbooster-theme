@@ -1,45 +1,109 @@
-<div class="certifications page-width">
+<div id="certifications" class="page-width">
 
-  <h1>Certifications section</h1>
+  <h2 class="text-center">{{section.settings.certification_title}}</h2>
+
+  <div class="row">
+
+    <div class="col-12 col-md-4">
+      <div class="col-12 imgLiquid imgLiquidNoFill">
+        <img src="{{ "sb.cert.CE_RED_GSM.png" | file_url}}" alt="SignalBooster Certification">
+      </div>
+      <div class="col-12 ha text-center">
+
+        <a href="{{section.settings.cert_link_1}}" class="btn">
+          Download PDF
+        </a>
+
+      </div>
+    </div>
+    <!--      -->
+    <div class="col-12 col-md-4">
+      <div class="col-12 imgLiquid imgLiquidNoFill">
+        <img src="{{ "sb.cert.Cran_Certificate.png" | file_url}}" alt="SignalBooster Certification">
+      </div>
+      <div class="col-12 ha text-center">
+
+        <a href="{{section.settings.cert_link_2}}" class="btn">
+          Download PDF
+        </a>
+
+      </div>
+    </div>
+    <!--          -->
+
+    <div class="col-12 col-md-4">
+      <div class="col-12 imgLiquid imgLiquidNoFill">
+        <img src="{{ "sb.cert.SKMBT.png" | file_url}}" alt="SignalBooster Certification">
+      </div>
+      <div class="col-12 ha text-center">
+
+        <a href="{{section.settings.cert_link_3}}" class="btn">
+          Download PDF
+        </a>
+
+      </div>
+    </div>
+  </div>
 
 </div>
 
+
 {% schema %}
-  {
-    "name":  {
-    "de": "Home Zertifizierungen",
-    "en": "Home page Certifications",
+{
+  "name":  {
+    "de": "Index Zertifizierungen",
+    "en": "Index Certifications",
     "es": "Certificaciones en Inicio",
     "fr": "Accueil Certifications",
-    "it": "Home page Certificazioni",
+    "it": "Index Certificazioni",
     "ja": "ホームページの認定",
     "pt-BR": "Inicial Certificações"
-	},
-	"class": "index-section index-certifications index-section--flush",
-    "settings": [
-	 {
-        "id": "cert_1",
-        "type": "image_picker",
-        "label": "Certificate 1"
-	},
-	 {
-        "id": "cert_2",
-        "type": "image_picker",
-        "label": "Certificate 2"
-	},
-	 {
-        "id": "cert_3",
-        "type": "image_picker",
-        "label": "Certificate 3"
-	}
-	],
-	"presets": [
-	{
-	"name": "index Certifications",
-	"category": "Custom"
-	}
-	]
+  },
+  "class": "index-section index-certifications index-section--flush",
+  "settings": [
+  {
+    "id": "certification_title",
+    "type": "text",
+    "label": "Section Title"
+  },
+  {
+    "id": "cert_1",
+    "type": "image_picker",
+    "label": "Certificate 1"
+  },
+  {
+    "id": "cert_link_1",
+    "type": "text",
+    "label": "Download link 1"
+  },
+  {
+    "id": "cert_2",
+    "type": "image_picker",
+    "label": "Certificate 2"
+  },
+  {
+    "id": "cert_link_2",
+    "type": "text",
+    "label": "Download link 2"
+  },
+  {
+    "id": "cert_3",
+    "type": "image_picker",
+    "label": "Certificate 3"
+  },
+  {
+    "id": "cert_link_3",
+    "type": "text",
+    "label": "Download link 3"
   }
+  ],
+  "presets": [
+  {
+    "name": "index Certifications",
+    "category": "Custom"
+  }
+  ]
+}
 {% endschema %}
 
 {% stylesheet %}

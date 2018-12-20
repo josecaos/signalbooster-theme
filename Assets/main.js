@@ -19,16 +19,16 @@ $(document).ready(() => {
 //
 function img_liquid() {
 
-	$('.imgLiquid .imgLiquidFill').imgLiquid()
-    $('.imgLiquid .imgLiquidNoFill').imgLiquid({
+	$('.imgLiquid.imgLiquidFill').imgLiquid()
+    $('.imgLiquid.imgLiquidNoFill').imgLiquid({
       fill: false
     })
-    $('.imgLiquid .imgLiquidNoFillLeft').imgLiquid({
+    $('.imgLiquid.imgLiquidNoFillLeft').imgLiquid({
       fill: false,
       horizontalAlign: "left"
     })
-    $('.imgLiquid .imgLiquidNoFillRight').imgLiquid({
-          fill: false,
+    $('.imgLiquid.imgLiquidNoFillRight').imgLiquid({
+      fill: false,
       horizontalAlign: "right"
     })
 
@@ -41,7 +41,7 @@ function header() {
     	var maincontent = $('#PageContainer')
         var search = $('#fixed-search-button')
 
-        if(top >= 50) {
+        if(top >= 58) {
 
          maincontent.css('padding-top','80px')
          header.css('position','fixed')
