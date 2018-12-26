@@ -2,7 +2,6 @@ $(document).ready(() => {
 
   console.log('SIGNALBOOSTER DEV\n' + '///////////////////////')
 //
-// header
   header()//default
 
   $(window).on('scroll',()=>{
@@ -37,7 +36,7 @@ function img_liquid() {
 function header() {
 
     	var top = $(window).scrollTop()
-        var header = $('header')
+        var header = $('header.main-header')
     	var maincontent = $('#PageContainer')
         var search = $('#fixed-search-button')
 
@@ -46,12 +45,22 @@ function header() {
          maincontent.css('padding-top','80px')
          header.css('position','fixed')
          search.removeClass('hidden')
+         //products filter
+         var x = $(".filters-toolbar-wrapper").detach()
+         $('header.main-header').append(x)
+         $(".filters-toolbar-wrapper").css('margin-bottom','0px')
+
 
         } else {
 
           maincontent.css('padding-top','0px')
           header.css('position','relative')
           search.addClass('hidden')
+          //products filter
+          var y = $(".filters-toolbar-wrapper").detach()
+         $('header.collection-header').append(y)
+         $(".filters-toolbar-wrapper").css('margin-bottom','55px')
+
         }
 
 }
