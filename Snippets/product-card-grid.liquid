@@ -32,6 +32,16 @@
 
   </div>
 
+  <!--          -->
+        <hr>
+        <div class="product-details-list">
+<!--           <p class="text-left ">Product Details:</p> -->
+          <ul class="col-12 text-left ">
+            {% include 'product-collection-info' with product %}
+          </ul>
+        </div>
+<!--          -->
+
   {% include 'product-price', variant: product %}
 
 </div>

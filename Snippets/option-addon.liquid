@@ -1,0 +1,76 @@
+{% if product.type contains 'repeater' %}
+
+<dt>
+  <label>Extended Warranty</label>
+</dt>
+<dd>
+  <div class="input-box">
+    <select id="extended-warranty-addon" class="select-text" title="" name="id[]">
+      <option value="" selected>-- Please Select --</option>
+      {% for product in collections.warranty-upgrades.products %}
+     	 <option value="{{ product.variants[0].id }}">{{ product.title }} + {{ product.price_min | money }}</option>
+      {% endfor %}
+    </select>
+  </div>
+</dd>
+
+
+
+
+
+<dt>
+  <label>Cable Upgrade</label>
+</dt>
+<dd>
+  <div class="input-box">
+    <select id="cable-upgrade-addon" class="select-text" title="" name="id[]">
+      <option value="" selected>-- Please Select --</option>
+      {% for product in collections.cable-addon.products %}
+      	 {%if forloop.first %}
+      		<option value="">{{ product.title }} (Included) + {{ product.price_min | money }}</option>
+      	 {%else%}
+     	 <option value="{%if product.price_min > 0 %}{{ product.variants[0].id }}{%endif%}">{{ product.title }} + {{ product.price_min | money }}</option>
+       {%endif%}
+      {% endfor %}
+    </select>
+  </div>
+</dd>
+{%unless product.tags contains 'No_Antenna_Upgrade' %}
+
+{%endunless%}
+
+
+<dt>
+  <label>{{ collections.antenna-upgrade.title }}</label>
+</dt>
+<dd style="border:none;">
+  <div class="input-box antenna_main_div" >
+    {% for product in collections.antenna-upgrade.products %}
+    <div class="antenna_sub_div">
+	  <div class="antenna_first_div">
+        {%comment%}
+        <div class="antenna_image_div">
+          {% for image in product.images limit:1 %}
+          <img src="{{ image | product_img_url: 'compact' }}" tppabs="" class="antenna_image" alt="" />
+          {% endfor %}
+        </div>
+        {%endcomment%}
+      </div>
+      <div class="antenna_price_div">
+        <div class="antenna_checkbox_div">
+          <input class="extra-addon-input" type="checkbox" name="id[]" value="{%if product.price_min > 0 %}{{ product.variants[0].id }}{%endif%}" />
+          <span class="tooltip_green" data-text="{{ product.description | strip_html}}">
+          <label>{{ product.title }}
+            {{ '(+' }}{{ product.price | money }}{{')'}}</label>
+          </span>
+        </div>
+
+      </div>
+    </div>  
+
+    {% endfor %}
+  </div>
+</dd>
+
+{% endif %}
+<div class="clear"></div>
