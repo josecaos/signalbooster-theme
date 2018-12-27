@@ -89,7 +89,7 @@ input, textarea, select {
   border-radius: $border-radius;
   font-size: 0.8em;
 /*   @include shadow($shadow-height-1,$shadow-height-1,1px,$color-black);   */
-  &:hover, &:focus, &:active {
+  &:hover, &:active {
     background-color: $color-1 !important;
     border: 1px solid $color-1 !important;
   	opacity:0.8;
@@ -97,6 +97,10 @@ input, textarea, select {
     @include shadow($shadow-height-1,$shadow-height-1,4px,$color-black);
   }
 }
+.shopify-cleanslate ._1J7LySxeLbBFoth2UBgmCQ {
+  border-radius: $border-radius !important;
+}
+
 /* .index-section {
   padding: 0;
 } */
@@ -114,7 +118,9 @@ input, textarea, select {
   	color: $color-alert;
   }
 }
-
+.full-width-link {
+  display: block;
+}
 /* header */
 .site-header__logo {
   padding: 0 !important;
@@ -168,7 +174,7 @@ input, textarea, select {
   }
 }
 .cont-header-cart {
-  height: $header-height;
+  min-height: $header-height;
   padding: 0;
   .icon-cart {
   	color: $color-1;
@@ -190,7 +196,7 @@ input, textarea, select {
 header.site-header {
 
   background-color: #FFF;
-  height: $header-height;
+  min-height: $header-height;
   top: 0;
   left: 0;
   @include shadow($shadow-height-1,$shadow-height-1,3px,$color-black);
@@ -445,6 +451,12 @@ header.site-header {
   margin-bottom: 32px !important;
   min-width: 100vh !important;
 }
+.product-form {
+  padding-top: 0;
+/*   .col-12 {
+  	padding: 0;
+  } */
+}
 /* coverage */
 .index-coverage {
   background-color: $grey-1;
@@ -607,4 +619,9 @@ footer.site-footer {
 }
 .page-wdth {
   max-width: 100%;
+}
+//pagination
+.list--inline.pagination {
+  padding-top: 0;
+  margin: 32px 0;
 }

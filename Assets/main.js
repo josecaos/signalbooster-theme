@@ -39,16 +39,17 @@ function header() {
         var header = $('header.main-header')
     	var maincontent = $('#PageContainer')
         var search = $('#fixed-search-button')
+        var filters = $(".filters-toolbar-wrapper")
 
-        if(top >= 58) {
+        if(top >= 60) {
 
          maincontent.css('padding-top','80px')
          header.css('position','fixed')
          search.removeClass('hidden')
          //products filter
-         var x = $(".filters-toolbar-wrapper").detach()
+         var x = $(filters).detach()
          $('header.main-header').append(x)
-         $(".filters-toolbar-wrapper").css('margin-bottom','0px')
+         $(filters).css({'margin-bottom':'0px','background-color':'white'})
 
 
         } else {
@@ -57,9 +58,9 @@ function header() {
           header.css('position','relative')
           search.addClass('hidden')
           //products filter
-          var y = $(".filters-toolbar-wrapper").detach()
+          var y = $(filters).detach()
          $('header.collection-header').append(y)
-         $(".filters-toolbar-wrapper").css('margin-bottom','55px')
+         $(filters).css('margin-bottom','55px')
 
         }
 
