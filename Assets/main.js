@@ -4,12 +4,14 @@ $(document).ready(() => {
 //
   header()//default
 
-  $(window).on('scroll',()=>{
-    header()
-	})
 //
   img_liquid()
+  read_more()
 
+//   scroll actions
+  $(window).on('scroll',()=>{
+   		header()
+	})
 
 //
   console.log('Scripts OK')
@@ -64,4 +66,16 @@ function header() {
 
         }
 
+}
+
+function read_more() {
+
+  $('.fulltext').each(function(){
+  $('.fulltext').hide();
+  $('.shown .readmore').click(function (event) {
+  event.preventDefault();
+  $(this).parent().find('.fulltext').slideToggle('slow');
+  $(this).text($(this).text() == 'Lire moins' ? 'Lire la suite' : 'Lire moins');
+  	});
+  });
 }
