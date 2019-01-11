@@ -145,7 +145,7 @@
           </ul>
         </div>
 <!--          -->
-
+        <hr>
           {% if section.settings.show_quantity_selector %}
             <div id="error-quantity-{{ section.id }}" class="form-message form-message--error product__quantity-error hide" tabindex="-1">
               {% include 'icon-error' %} {{ 'products.product.quantity_minimum_message' | t }}
@@ -153,7 +153,7 @@
           {% endif %}
 
           {% capture "form_classes" -%}
-            product-form product-form-{{ section.id }}{% unless section.settings.show_variant_labels %} product-form--hide-variant-labels{% endunless %}{% if section.settings.enable_payment_button and product.has_only_default_variant%} product-form--payment-button-no-variants{% endif %}
+            mx-auto product-form product-form-{{ section.id }}{% unless section.settings.show_variant_labels %} product-form--hide-variant-labels{% endunless %}{% if section.settings.enable_payment_button and product.has_only_default_variant%} product-form--payment-button-no-variants{% endif %}
           {%- endcapture %}
 
           {% form 'product', product, class:form_classes, novalidate: 'novalidate' %}
@@ -172,7 +172,7 @@
               {% endfor %}
             {% endunless %}
 
-            <select name="id" id="ProductSelect-{{ section.id }}" class="product-form__variants no-js">
+            <select name="id" id="ProductSelect-{{ section.id }}" class="col-12 product-form__variants no-js">
               {% for variant in product.variants %}
                 {% if variant.available %}
                   <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}">
@@ -184,48 +184,49 @@
               {% endfor %}
             </select>
 
-        <!-- Quantity -->
+<!--            <form name="myform" id="add-to-cart" action="/cart/add" method="post" onsubmit="return true"> -->
+
+             <!-- Product options -->
+             <div class="col-12 product-options">
+               <dl class="col-12 last">
+                 {% include 'option-addon' %}
+                 <input type="hidden" id="p_Vas" name="id[]" value="{{product.variants[0].id}}" />
+               </dl>
+             </div>
+
+             <!-- Quantity -->
             {% if section.settings.show_quantity_selector %}
-              <div class="product-form__item product-form__item--quantity">
+              <div class="col-12 product-form__item product-form__item--quantity">
                 <label for="Quantity-{{ section.id }}">{{ 'products.product.quantity' | t }}</label>
                 <input type="number" id="Quantity-{{ section.id }}" name="quantity" value="1" min="1" class="product-form__input" pattern="[0-9]*">
               </div>
             {% endif %}
 
-        <!-- Product options -->
-        <form name="myform" id="add-to-cart" action="/cart/add" method="post" onsubmit="return true">
-          <div class="product-options">
-            <dl class="last">
-              {% include 'option-addon' %}
-              <input type="hidden" id="p_Vas" name="id[]" value="{{product.variants[0].id}}" />
-            </dl>
-          </div>
-        </form>
-        <!--  Buttons -->
-            <div class="product-form__item product-form__item--submit{% if section.settings.enable_payment_button %} product-form__item--payment-button{% endif %}{% if product.has_only_default_variant %} product-form__item--no-variants{% endif %}">
-              <button type="submit" name="add" id="AddToCart-{{ section.id }}" {% unless current_variant.available %}disabled="disabled"{% endunless %} class="btn product-form__cart-submit{% if section.settings.enable_payment_button %} btn--secondary-accent{% endif %}">
-                <span id="AddToCartText-{{ section.id }}">
-                  {% unless current_variant.available %}
-                    {{ 'products.product.sold_out' | t }}
-                  {% else %}
-                    {{ 'products.product.add_to_cart' | t }}
-                  {% endunless %}
-                </span>
-              </button>
-              {% if section.settings.enable_payment_button %}
-                {{ form | payment_button }}
-              {% endif %}
-            </div>
-          {% endform %}
-        </div>
+             <!--  Buttons -->
+             <div class="col-12 product-form__item product-form__item--submit{% if section.settings.enable_payment_button %} product-form__item--payment-button{% endif %}{% if product.has_only_default_variant %} product-form__item--no-variants{% endif %}">
+               <button type="submit" name="add" id="AddToCart-{{ section.id }}" {% unless current_variant.available %}disabled="disabled"{% endunless %} class="btn product-form__cart-submit{% if section.settings.enable_payment_button %} btn--secondary-accent{% endif %}">
+                 <span id="AddToCartText-{{ section.id }}">
+                   {% unless current_variant.available %}
+                   {{ 'products.product.sold_out' | t }}
+                   {% else %}
+                   {{ 'products.product.add_to_cart' | t }}
+                   {% endunless %}
+                 </span>
+               </button>
+               {% if section.settings.enable_payment_button %}
+               {{ form | payment_button }}
+               {% endif %}
+             </div>
+             {% endform %}
+<!--         </div> -->
+<!--         </form> -->
 
         {%- comment -%}
           Live region for announcing updated price and availability to screen readers
         {%- endcomment -%}
         <p class="visually-hidden" data-product-status
           aria-live="polite"
-          role="status"
-        ></p>
+          role="status"></p>
 
         {% if section.settings.show_share_buttons %}
           {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product %}
@@ -236,7 +237,13 @@
 
   </div>
 
-    <div class="container product-single__description rte">
+    <div class="row product-single__description rte">
+      <hr>
+      <hr>
+      <hr>
+      <hr>
+      <hr>
+      <hr>
       {{ product.description }}
     </div>
 

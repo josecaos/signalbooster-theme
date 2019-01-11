@@ -75,7 +75,7 @@ function read_more() {
   $('.shown .readmore').click(function (event) {
   event.preventDefault();
   $(this).parent().find('.fulltext').slideToggle('slow');
-  $(this).text($(this).text() == 'Lire moins' ? 'Lire la suite' : 'Lire moins');
+  $(this).text($(this).text() == 'Close Info' ? 'Read More' : 'Close Info');
   	});
   });
 }

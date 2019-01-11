@@ -254,6 +254,7 @@ header.site-header {
     display: block;
     width: auto;
 }
+
 /*heroscreen */
 #shopify-section-hero {
   padding-top: 0;
@@ -457,7 +458,7 @@ header.site-header {
 .product-single__description {
   margin-top: 16px !important;
   margin-bottom: 32px !important;
-  min-width: 100vh !important;
+  min-width: 100% !important;
 }
 .product-form {
   padding-top: 0;
@@ -745,9 +746,4 @@ footer.site-footer {
 }
 .page_img_large {
   height: 550px;
-}
-/*  */
-#mobile_provider_select,
-#coverage_area_select {
-  height:35px
 }

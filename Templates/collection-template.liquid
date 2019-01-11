@@ -133,7 +133,7 @@
               {% endif %}
             </div>
 
-            <div class="filters-toolbar__item filters-toolbar__item--count">
+            <div class="d-none d-sm-block filters-toolbar__item filters-toolbar__item--count">
               <span class="filters-toolbar__product-count">{{ 'collections.general.items_with_count' | t: count: collection.products_count }}</span>
             </div>
           </div>
@@ -142,7 +142,7 @@
     {% endif %}
   </header>
 
-  <div class="page-width" id="Collection">
+  <div class="container-fluid" id="Collection">
     {% if section.settings.layout == 'grid' %}
       {% case section.settings.grid %}
       {% when 2 %}
@@ -207,13 +207,14 @@
           The onboarding styles and products are only loaded if the
           store has no products.
           {% endcomment %}
+
           {% if collection.handle == 'all' and collection.all_vendors.size == 0 and collection.all_types.size == 0%}
             {% for i in (1..4) %}
               <li class="list-view-item">
                 <a href="#" class="list-view-item__link">
                   <div class="list-view-item__image-column">
                     <div class="list-view-item__image-wrapper">
-                      <div class="list-view-item__image">
+                      <div class="list-view-item__image ">
                         {% capture current %}{% cycle 1, 2, 3, 4 %}{% endcapture %}
                         {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
                       </div>
