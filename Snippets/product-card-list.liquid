@@ -1,0 +1,54 @@
+<div class="container product-card product-card--list">
+
+  <a class="row full-width-link" href="{{ product.url | within: collection }}">
+
+    <span class="visually-hidden">{{ product.title }}</span>
+
+  <div class="prod-card-list col-12">
+
+  <div class="row list-view-item__link">
+
+    <div class="card-description col-12 col-sm-3 product-list-image">
+      <div class="col-auto product-list-image list-view-item__image-wrapper product-card__image-wrapper imgLiquid imgLiquidNoFill">
+        <img class="list-view-item__image" src="{{ product.featured_image.src | img_url: '95x95', scale: 2 }}" alt="">
+      </div>
+    </div>
+
+    <div class="card-description col-12 col-sm-6">
+
+        <div class="row">
+
+        <div class="list-view-item__title ha my-auto" aria-hidden="true">
+          <h4 class="product-card__title">{{ product.title }}
+            {% if product.compare_at_price > product.price %}
+            <div class="list-view-item__on-sale text-center">{{ 'products.product.on_sale' | t }}!!!</div>
+          </h4>
+        {% endif %}
+        </div>
+
+        {% if section.settings.show_vendor %}
+          <div class="list-view-item__vendor medium-up--hide">{{ product.vendor }}</div>
+        {% endif %}
+        {% unless product.available %}
+        <div class="list-view-item__sold-out text-center">{{ 'products.product.sold_out' | t }}!!!</div>
+        {% endunless %}
+      </div>
+
+    </div>
+
+    <div class="card-description col-12 col-sm-3">
+      <div class="row">
+      {% if product.available %}
+        {% include 'product-price', variant: product %}
+      {% endif %}
+      </div>
+
+    </div>
+
+    </div>
+
+  </div>
+
+  </a>
+
+</div>
