@@ -40,12 +40,12 @@
           <div class="collection-hero__image" style="background-image: url({{ collection.image | img_url: '2048x600', crop: 'top' }});"></div>
         </noscript>
         <div class="collection-hero__title-wrapper">
-          <h1 class="collection-hero__title page-width">
+          <h2 class="collection-hero__title page-width">
             <span role="text">
               <span class="visually-hidden">{{ 'collections.general.collection_label' | t }}: </span>
               {{ collection.title }}
             </span>
-          </h1>
+          </h2>
         </div>
       </div>
       {% if is_filter_by_available == false and section.settings.sort_enable == false %}
