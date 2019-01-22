@@ -1,0 +1,101 @@
+<div class="page-width">
+  <div class="container grid">
+    <div class="row grid__item medium-up--five-sixths medium-up--push-one-twelfth">
+      <div class="container section-header text-center">
+        <h1>{{ page.title }}</h1>
+      </div>
+
+      {% if page.content.size > 0 %}
+        <div class="rte">
+          {{ page.content }}
+        </div>
+      {% endif %}
+
+      <!--        -->
+      <div class="info-txt col-12 col-sm-4">
+
+        <div class="container-fluid">
+
+          <div class="row text-left">
+
+            <div class="col-12 ha my-auto">
+
+              <h4 class="col-12">We are located on</h4>
+
+              <ul class="col-12">
+
+                <li class="col-12">
+                  Glenugie Road, Manors Pinetown, Durban, 3610
+                </li>
+
+                <hr>
+
+                <li class="col-12">
+                  Escudo Street, Marais Industria, Vredenburg, Western Cape, 7380, South Africa
+                </li>
+
+                <hr>
+
+                <li class="col-12">
+                  6 Crinum Road, Bloubergrand, Cape Town, Western Cape, 7441, South Africa
+                </li>
+
+                <hr>
+                <li class="col-12">
+                  <i class="fa fa-phone"></i>&nbsp;Telephone:<br><a href="tel:27871350604 ">+27-871350604 </a>
+                </li>
+
+              </ul>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+<!--        -->
+
+
+      <div class="col-12 col-sm-8 contact-form form-vertical">
+        {%- assign formId = 'ContactForm' -%}
+        {% form 'contact', id: formId %}
+          {% include 'form-status', form_id: formId %}
+
+          <div class="grid grid--half-gutters">
+            <div class="grid__item medium-up--one-half">
+              <label for="{{ formId }}-name">{{ 'contact.form.name' | t }}</label>
+              <input type="text" id="{{ formId }}-name" name="contact[name]" value="{% if form[name] %}{{ form[name] }}{% elsif customer %}{{ customer.name }}{% endif %}">
+            </div>
+            <div class="grid__item medium-up--one-half">
+              <label for="{{ formId }}-email">{{ 'contact.form.email' | t }} <span aria-hidden="true">*</span></label>
+              <input
+                type="email"
+                id="{{ formId }}-email"
+                name="contact[email]"
+                autocorrect="off"
+                autocapitalize="off"
+                value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}"
+                aria-required="true"
+                {%- if form.errors contains 'email' -%}
+                  class="input--error"
+                  aria-invalid="true"
+                  aria-describedby="{{ formId }}-email-error"
+                {%- endif -%}
+                >
+              <span id="{{ formId}}-email-error" class="input-error-message">{% include 'icon-error' %} {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}.</span>
+            </div>
+          </div>
+
+          <label for="{{ formId }}-phone">{{ 'contact.form.phone' | t }}</label>
+          <input type="tel" id="{{ formId }}-phone" name="contact[phone]" pattern="[0-9\-]*" value="{% if form[phone] %}{{ form[phone] }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+
+          <label for="{{ formId }}-message">{{ 'contact.form.message' | t }}</label>
+          <textarea rows="10" id="{{ formId }}-message" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+
+          <input type="submit" class="btn" value="{{ 'contact.form.submit' | t }}">
+
+        {% endform %}
+      </div>
+
+    </div>
+  </div>
+</div>
