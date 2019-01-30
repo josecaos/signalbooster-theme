@@ -1,2 +1,3 @@
-# signalbooster-theme
-**Shopify theme files for signalbooster.co.za**
+# signalbooster South Africa theme
+
+** Shopify theme for signalbooster.co.za **
