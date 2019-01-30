@@ -52,7 +52,7 @@ function header() {
          var x = $(filters).detach()
          $('header.main-header').append(x)
          $(filters).css({'margin-bottom':'0px','background-color':'white'})
-
+         
 
         } else {
 
@@ -63,7 +63,7 @@ function header() {
           var y = $(filters).detach()
          $('header.collection-header').append(y)
          $(filters).css('margin-bottom','55px')
-
+         
         }
 
 }

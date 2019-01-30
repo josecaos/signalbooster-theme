@@ -1,25 +1,25 @@
-<div style="display: none;" class="widget_shopping_cart_content">
+<div style="display: none;" class="widget_shopping_cart_content">   
   {%comment%}
   {% if cart.item_count == 0 %}
   <span class="empty">{{ settings.lang_shoppingcartisempty }}</span>
   {%else%}
-   <ul class="cart_list">
+   <ul class="cart_list">  
   {% for item in cart.items %}
-         <li>
+         <li> 
             {% assign myarray = item.title | split:'- S' %}
             <a href="{{item.product.url}}" title="{{myarray[0]}}">
                 <img src="{{ item.product.featured_image | product_img_url: 'medium'}}" class="attachment-shop_tiny wp-post-image" alt="man-of-steel-1a">
                     <span class="js_widget_product_title">
-                      {{ myarray[0] | escape }}
+                      {{ myarray[0] | escape }}                    
               		</span>
              </a>
             <span class="js_widget_product_price">{{ item.quantity }} ×
               <ins>{{ item.price | money }}</ins>
               <ins>{{item.line_price | money }}</ins>
               <a href="/cart/change?line={{ forloop.index }}&quantity=0" title="Remove"><span>X</span></a>
-            </span>
+            </span>           
          </li>
-   {%endfor%}
+   {%endfor%}  
             </ul>
     <p class="total">
         <strong>{{settings.lang_subtotal }}: </strong>{{ cart.total_price | money }}</p>

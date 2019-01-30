@@ -5,7 +5,7 @@
      data-sizes="auto"
      data-parent-fit="cover"
      style="background-position: {{ section.settings.alignment }}; background-image: url('{{ section.settings.image | img_url: '300x300' }});"
-
+     
          {% endif %}>
   {% if section.settings.image == blank %}
 <!--     <div class="row placeholder-background">
@@ -24,12 +24,12 @@
       </h2>
 
       {% endif %}
-
+      
         <!--      -->
     <div id="hero-select" class="col-12" >
-
+    
       <div class="row ">
-
+        
         <ul id="hero-buttons" class="col-12 ha my-auto text-center">
           <li class="row hero-button">
             <div class="overlay col-12">
@@ -84,13 +84,13 @@
             </a>
           </li>
         </ul>
-
+      
       </div>
-
+    
     </div>
     <!--      -->
-
-
+      
+      
       {% if section.settings.text != blank %}
         <div class="col rte-setting mega-subtitle{% if section.settings.text_size == 'large' %} mega-subtitle--large{% endif %}">{{ section.settings.text }}</div>
       {% endif %}
@@ -100,9 +100,9 @@
         </a>
       {% endif %}
     </div>
-
+  
   </div>
-
+  
 </div>
 
 <noscript>

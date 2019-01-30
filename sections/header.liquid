@@ -83,8 +83,8 @@
 
     	<div class="site-header__search site-header__icon">
      	 {% include 'search-form' %}
-    	</div>
-
+    	</div>        
+        
         <div class="row float-right">
           <div class="col-auto ha my-auto small--hide">Search:&nbsp;</div>
           <button type="button" class="col-auto ha my-auto text-right btn--link site-header__icon site-header__search-toggle js-drawer-open-top">
@@ -198,8 +198,8 @@
       </ul>
     </nav>
 <!--      -->
-
-
+  
+  
   <header class="main-header container-fluid site-header{% if section.settings.align_logo == 'left' %} border-bottom logo--left{% else %} logo--center{% endif %}" role="banner">
 
     <div class="grid--no-gutters grid--table site-header__mobile-nav">
@@ -208,14 +208,14 @@
       {% else %}
         {%- assign logo_classes = 'medium-up--one-quarter logo-align--left' -%}
       {% endif %}
-
+      
       <div class="cont-header col-12">
 
       <div class="cont-logo col-8 col-md-2 grid__item {{ logo_classes }}">
-
-        <div class="row col">
-
-          <div class="col">
+        
+        <div class="row col-12">
+            
+          <div class="col-12">
         {% comment %}
           Use the uploaded logo from theme settings if enabled.
           Site name gets precedence with H1 tag on homepage, div on other pages.
@@ -262,14 +262,14 @@
           <div class="row">
             <div class="col ha my-auto">
             {% include 'site-nav' %}
-            </div>
+            </div>  
           </div>
-
+           
         </nav>
       {% endif %}
 <!--  -->
       <div class="cont-header-cart col-4 col-md-1 grid__item {% if section.settings.align_logo == 'left' %}medium-up--one-quarter{% else %}medium-up--one-third medium-up--push-one-third{% endif %} text-right site-header__icons{% if shop.customer_accounts_enabled %} site-header__icons--plus{% endif %}">
-
+       
         <div class="site-header__icons-wrapper">
 
           {% if shop.customer_accounts_enabled %}
@@ -290,8 +290,8 @@
             <i class="fa fa-search"></i>
             <span class="icon__fallback-text">{{ 'layout.navigation.search' | t }}</span>
           </button>
-
-
+          
+          
           <a href="/cart" class="button-icon site-header__icon site-header__cart">
             {% include 'icon-cart' %}
             <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
@@ -324,7 +324,7 @@
             </button>
           {% endunless %}
         </div>
-
+        
       </div>
     </div>
  </div>

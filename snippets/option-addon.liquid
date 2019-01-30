@@ -1,11 +1,13 @@
-{% if product.type contains 'repeater' %}
+
+
+{% if product.type contains 'repeater' %}  
 
 <dt>
   <label>Extended Warranty</label>
 </dt>
 <dd>
-  <div class="input-box">
-    <select id="extended-warranty-addon" class="select-text" title="" name="id[]">
+  <div class="row input-box">
+    <select id="extended-warranty-addon" class="col-12 select-text" title="" name="id[]">
       <option value="" selected>-- Please Select --</option>
       {% for product in collections.warranty-upgrades.products %}
      	 <option value="{{ product.variants[0].id }}">{{ product.title }} + {{ product.price_min | money }}</option>
@@ -22,8 +24,8 @@
   <label>Cable Upgrade</label>
 </dt>
 <dd>
-  <div class="input-box">
-    <select id="cable-upgrade-addon" class="select-text" title="" name="id[]">
+  <div class="row input-box">
+    <select id="cable-upgrade-addon" class="col-12 select-text" title="" name="id[]">
       <option value="" selected>-- Please Select --</option>
       {% for product in collections.cable-addon.products %}
       	 {%if forloop.first %}
@@ -52,24 +54,24 @@
         <div class="antenna_image_div">
           {% for image in product.images limit:1 %}
           <img src="{{ image | product_img_url: 'compact' }}" tppabs="" class="antenna_image" alt="" />
-          {% endfor %}
+          {% endfor %}	
         </div>
         {%endcomment%}
-      </div>
+      </div> 
       <div class="antenna_price_div">
         <div class="antenna_checkbox_div">
-          <input class="extra-addon-input" type="checkbox" name="id[]" value="{%if product.price_min > 0 %}{{ product.variants[0].id }}{%endif%}" />
+          <input class="extra-addon-input" type="checkbox" name="id[]" value="{%if product.price_min > 0 %}{{ product.variants[0].id }}{%endif%}" />  
           <span class="tooltip_green" data-text="{{ product.description | strip_html}}">
           <label>{{ product.title }}
             {{ '(+' }}{{ product.price | money }}{{')'}}</label>
           </span>
         </div>
-
+        
       </div>
     </div>  
 
     {% endfor %}
-  </div>
+  </div> 
 </dd>
 
 {% endif %}

@@ -9,10 +9,11 @@
         <img src="{{ "sb.cert.CE_RED_GSM.png" | file_url}}" alt="SignalBooster Certification">
       </div>
       <div class="col-12 ha text-center">
-
+        {%comment%}
         <a href="{{section.settings.cert_link_1}}" class="btn">
           Download PDF
         </a>
+        {%endcomment%}
 
       </div>
     </div>
@@ -22,30 +23,37 @@
           <img src="{{ "sb.cert.Cran_Certificate.png" | file_url}}" alt="SignalBooster Certification">
         </div>
         <div class="col-12 ha text-center">
-
+        {%comment%}
           <a href="{{section.settings.cert_link_2}}" class="btn">
             Download PDF
           </a>
-
+        {%endcomment%}
         </div>
       </div>
-      <!--          -->
+    <!--          -->
 
-        <div class="col-12 col-md-4">
-          <div class="col-12 imgLiquid imgLiquidNoFill">
-            <img src="{{ "sb.cert.SKMBT.png" | file_url}}" alt="SignalBooster Certification">
-          </div>
-          <div class="col-12 ha text-center">
-
-            <a href="{{section.settings.cert_link_3}}" class="btn">
+    <div class="col-12 col-md-4">
+      <div class="col-12 imgLiquid imgLiquidNoFill">
+        <img src="{{ "sb.cert.SKMBT.png" | file_url}}" alt="SignalBooster Certification">
+      </div>
+      <div class="col-12 ha text-center">
+        {%comment%}
+        <a href="{{section.settings.cert_link_3}}" class="btn">
               Download PDF
             </a>
-
+            {%endcomment%}
           </div>
-        </div>
-      </div>
-
     </div>
+
+  </div>
+  
+  <br>
+  <br>
+  <div class="col-12">
+    <h3 class="text-center">{{section.settings.cert_text}}</h3>  
+  </div>
+
+</div>
 
 
   {% schema %}
@@ -95,6 +103,11 @@
       "id": "cert_link_3",
       "type": "text",
       "label": "Download link 3"
+    },
+    {
+      "id": "cert_text",
+      "type": "text",
+      "label": "Section Text"
     }
     ],
     "presets": [
