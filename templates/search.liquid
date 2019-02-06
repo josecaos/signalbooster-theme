@@ -52,7 +52,7 @@
     <hr aria-hidden="true" />
   {% endif %}
   <h2 class="visually-hidden">{{ 'general.search.heading' | t: count: search.results_count }}</h2>
-  <ul class="page-width list-view-items">
+  <ul id="search-list" class="page-width list-view-items">
     {% for item in search.results %}
       <li class="list-view-item">
           {% if item.object_type == 'product' %}
@@ -61,8 +61,8 @@
             <div class="product-card product-card--list">
               <a href="{{ item.url }}" class="full-width-link">
                 <span class="visually-hidden">{{ item.title }}</span>
-              </a>
-              <div class="list-view-item__link">
+
+                <div class="list-view-item__link">
                 {% if item.image %}
                   <div class="list-view-item__image-column">
                     <div class="list-view-item__image-wrapper product-card__image-wrapper">
@@ -71,19 +71,20 @@
                   </div>
                 {% endif %}
 
-                <div class="list-view-item__title-column">
-                  <div class="list-view-item__title" aria-hidden="true">
-                    <span class="product-card__title">{{ item.title }}</span>
-                  </div>
-                  <div>
-                    {% if item.published_at %}{{ item.published_at | date: "%b %d, %Y" }} &#8212; {% endif %}
-                    {{ item.content | strip_html | truncate: 200 }}
+                  <div class="list-view-item__title-column">
+                    <div class="list-view-item__title" aria-hidden="true">
+                      <span class="product-card__title">{{ item.title }}</span>
+                    </div>
+                    <div>
+                      {% if item.published_at %}{{ item.published_at | date: "%b %d, %Y" }} &#8212; {% endif %}
+                      {{ item.content | strip_html | truncate: 200 }}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          {% endif %}
-      </li>
+              </a>
+        </div>
+        {% endif %}
+    </li>
     {% endfor %}
   </ul>
 

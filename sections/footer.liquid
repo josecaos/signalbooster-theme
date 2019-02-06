@@ -66,15 +66,15 @@
 </style>
 
 <footer class="site-footer" role="contentinfo">
-  
+
   <div id="footer_directions" class="container">
-    
+
     <div class="row">
-    
+
       <h3 id="contact_title" class="col-12 text-center">
-      
+
         {{section.settings.text_directions}}
-     
+
       </h3>
 
       <ul class="row text-center">
@@ -86,44 +86,44 @@
 
         {% if address1  != '' %}
         <li class="col-12 col-sm-6 col-md-4">
-          <i class="fa fa-map"></i>&nbsp; {{ address1 }}  
+          <i class="fa fa-map-marker"></i>&nbsp; {{ address1 }}
         </li>
         {% endif %}
 
         {% if address2 != '' %}
         <li class="col-12 col-sm-6 col-md-4">
-          <i class="fa fa-map"></i>&nbsp; {{ address2 }}  
+          <i class="fa fa-map-marker"></i>&nbsp; {{ address2 }}
         </li>
         {% endif %}
 
         {% if address3 != '' %}
         <li class="col-12 col-sm-6 col-md-4">
-          <i class="fa fa-map"></i>&nbsp; {{ address3 }}  
+          <i class="fa fa-map-marker"></i>&nbsp; {{ address3 }}
         </li>
         {%- endif -%}
 
         {% if address4 != '' %}
         <li class="col-12 col-sm-6">
-          <i class="fa fa-map"></i>&nbsp; {{ address4 }}  
+          <i class="fa fa-map-marker"></i>&nbsp; {{ address4 }}
         </li>
         {% endif %}
-       
+
         {% if address5 != '' %}
         <li class="col-12 col-sm-12 col-md-6">
-          <i class="fa fa-map"></i>&nbsp; {{ address5 }}  
+          <i class="fa fa-map-marker"></i>&nbsp; {{ address5 }}
         </li>
         {% endif %}
-        
+
       </ul>
 
     </div>
   </div>
-  
+
   <hr class="site-footer__hr">
-  
+
   <div class="footer_blocks page-width">
-    
-    <div class="site-footer__content">
+
+    <div class="container site-footer__content">
       {%- for block in section.blocks -%}
 
         <div class="site-footer__item
@@ -198,7 +198,7 @@
 
   <hr class="site-footer__hr">
 
-  <div class="page-width">
+  <div class="footer-bottom page-width">
     <div class="grid grid--no-gutters small--text-center">
       <div class="grid__item one-half small--one-whole">
         {%- if social_icons -%}
@@ -276,7 +276,7 @@
               </li>
             {%- endif -%}
             <li>
-                <a class="social-icons__link" href="mailto:sales@signalbooster.co.za" aria-describedby="a11y-external-message">  
+                <a class="social-icons__link" href="mailto:sales@signalbooster.co.za" aria-describedby="a11y-external-message">
                   <i class="fa fa-envelope"></i>
                 </a>
               </li>
@@ -313,6 +313,10 @@
       </div>
     </div>
   </div>
+
+<!--   chat -->
+    {% include "livechat_monitoring_code" %}
+
 </footer>
 
 
@@ -579,7 +583,7 @@
             "de": "Abonnenten werden zu Ihrer \"akzeptiert Marketingmaterial\"-Liste hinzugefügt [Kundenliste.](/admin/customers?query=&accepts_marketing=1)",
             "en": "Subscribers will be added to your “accepts marketing” [customer list.](/admin/customers?query=&accepts_marketing=1)",
             "es": "Se añadirá los suscriptores a tu lista \"acepta marketing\"[lista de clients.](/admin/customers?query=&accepts_marketing=1)",
-            "fr": "Les abonnés seront ajoutés à votre [liste de clients](/admin/customers?query=&accepts_marketing=1) « Accepte le marketing ».",
+            "fr": "Les abonnés seront ajoutés à votre [liste de clients](/admin/customers?query=&accepts_marketing=1) « Accepte le marketing ».",
             "it": "Gli iscritti verranno aggiunti al tuo [elenco clienti](/admin/customers?query=&accepts_marketing=1) “Accetta marketing”.",
             "ja": "購読者は「マーケティングを受け入れる」[顧客リスト](/admin/customers?query=&accepts_marketing=1)に追加されます。",
             "pt-BR": "Os assinantes serão adicionados à sua lista de pessoas que “aceitam marketing” [lista de clientes.](/admin/customers?query=&accepts_marketing=1)"

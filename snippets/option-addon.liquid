@@ -1,14 +1,14 @@
 
 
-{% if product.type contains 'repeater' %}  
-
+{% if product.type contains 'repeater' %}
+{{ product.variants.id}}
 <dt>
   <label>Extended Warranty</label>
 </dt>
 <dd>
   <div class="row input-box">
     <select id="extended-warranty-addon" class="col-12 select-text" title="" name="id[]">
-      <option value="" selected>-- Please Select --</option>
+<!--       <option value="2467210307" selected>Select Warranty</option> -->
       {% for product in collections.warranty-upgrades.products %}
      	 <option value="{{ product.variants[0].id }}">{{ product.title }} + {{ product.price_min | money }}</option>
       {% endfor %}
@@ -19,14 +19,14 @@
 
 
 
-
+{% comment %}
 <dt>
   <label>Cable Upgrade</label>
 </dt>
 <dd>
   <div class="row input-box">
     <select id="cable-upgrade-addon" class="col-12 select-text" title="" name="id[]">
-      <option value="" selected>-- Please Select --</option>
+<!--       <option value="" selected>Select Cable</option> -->
       {% for product in collections.cable-addon.products %}
       	 {%if forloop.first %}
       		<option value="">{{ product.title }} (Included) + {{ product.price_min | money }}</option>
@@ -41,37 +41,30 @@
 
 {%endunless%}
 
+{% endcomment %}
 
 <dt>
   <label>{{ collections.antenna-upgrade.title }}</label>
 </dt>
 <dd style="border:none;">
-  <div class="input-box antenna_main_div" >
+  <div class="antenna_upgrade_container input-box antenna_main_div" >
     {% for product in collections.antenna-upgrade.products %}
     <div class="antenna_sub_div">
-	  <div class="antenna_first_div">
-        {%comment%}
-        <div class="antenna_image_div">
-          {% for image in product.images limit:1 %}
-          <img src="{{ image | product_img_url: 'compact' }}" tppabs="" class="antenna_image" alt="" />
-          {% endfor %}	
-        </div>
-        {%endcomment%}
-      </div> 
+	  <div class="antenna_first_div"></div>
       <div class="antenna_price_div">
         <div class="antenna_checkbox_div">
-          <input class="extra-addon-input" type="checkbox" name="id[]" value="{%if product.price_min > 0 %}{{ product.variants[0].id }}{%endif%}" />  
+          <input class="extra-addon-input" type="checkbox" name="id[]" value="{%if product.price_min > 0 %}{{ product.variants[0].id }}{%endif%}" />
           <span class="tooltip_green" data-text="{{ product.description | strip_html}}">
           <label>{{ product.title }}
             {{ '(+' }}{{ product.price | money }}{{')'}}</label>
           </span>
         </div>
-        
+
       </div>
-    </div>  
+    </div>
 
     {% endfor %}
-  </div> 
+  </div>
 </dd>
 
 {% endif %}
