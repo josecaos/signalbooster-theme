@@ -41,7 +41,7 @@ $quote-font: 1.6em;
 
 /* general */
 body {
-  background-color: whitesmoke;
+  background-color: $color-white;
 /*   background: $color-1; */
   font-family: $font-content;
   h1,h2,h3,h4,h5,h6 {
@@ -579,11 +579,16 @@ ul.list-view-items {
     padding-top: 0;
     padding-bottom: 0;
     border-bottom: 0px;
+
     &:nth-child(odd) {
+        .product-card {
+      background-color: black;
       a {
         background-color: $color-1;
         padding: 16px 16px;
+        display: block;
       }
+        }
     }
 
     div {
@@ -593,22 +598,28 @@ ul.list-view-items {
         color: $color-alert;
       }
     }
+
     &:nth-child(even) {
-      a {
-        background-color: $grey-1;
-        padding: 16px 16px;
-        color: $color-dark;
-        h4 {
+      .product-card {
+        background-color: pink;
+        a {
+          background-color: $grey-1;
+          padding: 16px 16px;
           color: $color-dark;
-        }
-        .price-item--regular {
-          color: $color-dark;
-        }
-        .price__sale {
-          color: $color-alert;
+          display: block;
+          h4 {
+            color: $color-dark;
+          }
+          .price-item--regular {
+            color: $color-dark;
+          }
+          .price__sale {
+            color: $color-alert;
+          }
         }
       }
     }
+
     div {
       color: $color-white;
       .price-item--sale,
