@@ -1,13 +1,13 @@
 <div class="container product-card product-card--list">
-  
+
   <a class="row full-width-link" href="{{ product.url | within: collection }}">
-    
+
     <span class="visually-hidden">{{ product.title }}</span>
-  
+
   <div class="prod-card-list col-12">
-  
+
   <div class="row list-view-item__link">
-    
+
     <div class="card-description col-12 col-sm-3 product-list-image">
       <div class="col-auto product-list-image list-view-item__image-wrapper product-card__image-wrapper imgLiquid imgLiquidNoFill">
         <img class="list-view-item__image" src="{{ product.featured_image.src | img_url: '95x95', scale: 2 }}" alt="">
@@ -15,7 +15,7 @@
     </div>
 
     <div class="card-description col-12 col-sm-6">
-     
+
         <div class="row">
 
         <div class="col-12 list-view-item__title ha my-auto text-center" aria-hidden="true">
@@ -33,7 +33,7 @@
         <div class="col-12 list-view-item__sold-out text-center ha my-auto">{{ 'products.product.sold_out' | t }}!!!</div>
         {% endunless %}
       </div>
-      
+
     </div>
 
     <div class="card-description col-12 col-sm-3">
@@ -42,13 +42,13 @@
         {% include 'product-price', variant: product %}
       {% endif %}
       </div>
-      
+
     </div>
-    
+
     </div>
-    
-  </div> 
-  
+
+  </div>
+
   </a>
-  
+
 </div>

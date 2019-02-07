@@ -56,22 +56,23 @@
     {% for item in search.results %}
       <li class="list-view-item">
           {% if item.object_type == 'product' %}
+
             {% include 'product-card-list', product: item %}
           {% else %}
             <div class="product-card product-card--list">
-              <a href="{{ item.url }}" class="full-width-link">
+              <a href="{{ item.url }}" class="container">
                 <span class="visually-hidden">{{ item.title }}</span>
 
-                <div class="list-view-item__link">
+                <div class="row list-view-item__link my-auto">
                 {% if item.image %}
-                  <div class="list-view-item__image-column">
-                    <div class="list-view-item__image-wrapper product-card__image-wrapper">
+                  <div class="col-12 col-md-3 list-view-item__image-column">
+                    <div class="imgLiquid imgLiquidNoFill list-view-item__image-wrapper product-card__image-wrapper">
                       <img class="list-view-item__image" src="{{ item.image.src | img_url: '600x600' }}" alt="{{ item.image.alt | escape }}">
                     </div>
                   </div>
                 {% endif %}
 
-                  <div class="list-view-item__title-column">
+                  <div class="col-12 col-md-9 list-view-item__title-column my-auto">
                     <div class="list-view-item__title" aria-hidden="true">
                       <span class="product-card__title">{{ item.title }}</span>
                     </div>
